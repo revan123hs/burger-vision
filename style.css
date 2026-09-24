@@ -1,0 +1,1156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            -45deg,
+            #0a0a0a,
+            #111111,
+            #1a1a1a,
+            #0d0d0d
+        );
+
+    background-size: 400% 400%;
+    animation: darkWave 12s ease infinite;
+
+    font-family: Arial, sans-serif;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+
+/* =====================================
+   NAVBAR
+===================================== */
+
+.burger-nav {
+    width: 80%;
+    height: 88px;
+
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 9999;
+
+    background: rgba(17, 17, 17, 0.94);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* NAV INNER */
+
+.burger-nav-inner {
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =====================================
+   LOGO
+===================================== */
+
+.burger-logo {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    text-decoration: none;
+}
+
+.burger-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #e6392f;
+    color: white;
+
+    font-size: 24px;
+
+    box-shadow:
+        0 8px 25px rgba(230, 57, 47, 0.3);
+
+    transition: 0.3s ease;
+}
+
+.burger-logo:hover .burger-icon {
+    transform: rotate(-7deg) scale(1.06);
+}
+
+.burger-title {
+    color: white;
+
+    font-size: 24px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.burger-title span {
+    color: #e6392f;
+}
+
+
+/* =====================================
+   MENU
+===================================== */
+
+.burger-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-btn,
+.basket-btn {
+    height: 46px;
+
+    padding: 0 18px;
+
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+
+/* CREATE */
+
+.create-btn {
+    background: #e6392f;
+    color: white;
+
+    border: 1px solid #e6392f;
+}
+
+.create-btn:hover {
+    color: white;
+
+    background: #ff4a40;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(230, 57, 47, 0.25);
+}
+
+
+/* STORES */
+
+.stores-btn {
+    background: #1c1c1c;
+
+    color: white;
+
+    border: 1px solid #333;
+}
+
+.stores-btn:hover {
+    color: white;
+
+    background: #292929;
+
+    border-color: #e6392f;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   BASKET BUTTON
+===================================== */
+
+.basket-btn {
+    position: relative;
+
+    background: white;
+    color: #111;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.basket-btn:hover {
+    background: #eeeeee;
+
+    transform: translateY(-2px);
+}
+
+
+/* BASKET COUNT */
+
+.spzan {
+    min-width: 20px;
+    height: 20px;
+
+    padding: 0 5px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e6392f;
+    color: white;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* =====================================
+   MOBILE BUTTON
+===================================== */
+
+.mobile-nav-btn {
+    display: none;
+
+    width: 45px;
+    height: 45px;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #1c1c1c;
+
+    color: white;
+
+    border: 1px solid #333;
+    border-radius: 13px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================
+   MOBILE MENU
+===================================== */
+
+.mobile-menu {
+    padding: 15px 0 18px;
+}
+
+.mobile-menu a,
+.mobile-menu button {
+    width: 100%;
+
+    padding: 14px 16px;
+    margin-top: 7px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #1c1c1c;
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.mobile-menu a:hover,
+.mobile-menu button:hover {
+    background: #e6392f;
+}
+
+
+/* =====================================
+   BASKET OVERLAY
+===================================== */
+
+.basket-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    backdrop-filter: blur(3px);
+
+    z-index: 99998;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.basket-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =====================================
+   BASKET
+===================================== */
+
+.basket {
+    position: fixed;
+
+    top: 0;
+
+    /* TAMAMİLƏ EKRANDAN KƏNARA */
+    right: 0;
+
+    width: 400px;
+    max-width: 100%;
+
+    height: 100vh;
+
+    z-index: 99999;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 25px;
+
+    background: #151515;
+    color: white;
+
+    box-shadow:
+        -15px 0 45px rgba(0, 0, 0, 0.45);
+
+    /* BAĞLI VƏZİYYƏT */
+    transform: translateX(100%);
+
+    visibility: hidden;
+
+    transition:
+        transform 0.45s cubic-bezier(0.77, 0, 0.18, 1),
+        visibility 0.45s ease;
+}
+
+
+/* AÇIQ VƏZİYYƏT */
+
+.basket.active {
+    transform: translateX(0);
+
+    visibility: visible;
+}
+
+
+/* =====================================
+   BASKET TOP
+===================================== */
+
+.basket-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid #303030;
+}
+
+.basket-title {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.basket-title > i {
+    color: #e6392f;
+
+    font-size: 22px;
+}
+
+.basket-title h3 {
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.basket-title small {
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* =====================================
+   CLOSE BUTTON
+===================================== */
+
+.delet {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #252525;
+    color: white;
+
+    font-size: 27px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.delet:hover {
+    background: #e6392f;
+
+    transform: rotate(90deg);
+}
+
+
+/* =====================================
+   BASKET PRODUCTS
+===================================== */
+
+.divsekk {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 20px 0;
+}
+
+.divsekk::-webkit-scrollbar {
+    width: 5px;
+}
+
+.divsekk::-webkit-scrollbar-thumb {
+    background: #e6392f;
+
+    border-radius: 10px;
+}
+
+
+/* =====================================
+   EMPTY BASKET
+===================================== */
+
+.empty-basket {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    color: #777;
+}
+
+.empty-basket i {
+    margin-bottom: 15px;
+
+    font-size: 45px;
+
+    color: #333;
+}
+
+.empty-basket h4 {
+    margin-bottom: 7px;
+
+    color: #ddd;
+
+    font-size: 17px;
+}
+
+.empty-basket p {
+    font-size: 13px;
+}
+
+
+/* =====================================
+   CART PRODUCT
+===================================== */
+
+.cart-item {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+    margin-bottom: 12px;
+
+    background: #1d1d1d;
+
+    border: 1px solid #2b2b2b;
+    border-radius: 15px;
+}
+
+.cart-img {
+    width: 70px;
+    height: 60px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+.cart-info {
+    flex: 1;
+}
+
+.cart-info h4 {
+    margin: 0 0 5px;
+
+    font-size: 14px;
+}
+
+.cart-price {
+    color: #e6392f;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.quantity-box {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.quantity-box button {
+    width: 25px;
+    height: 25px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #303030;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.quantity-box button:hover {
+    background: #e6392f;
+}
+
+.quantity-box span {
+    min-width: 15px;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+
+/* =====================================
+   BASKET BOTTOM
+===================================== */
+
+.basket-bottom {
+    padding-top: 20px;
+
+    border-top: 1px solid #303030;
+}
+
+.total-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.total-row span {
+    color: #888;
+
+    font-size: 15px;
+}
+
+.total-row strong {
+    color: white;
+
+    font-size: 24px;
+}
+
+
+/* CHECKOUT */
+
+.checkout-btn {
+    width: 100%;
+    height: 53px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+    border-radius: 13px;
+
+    background: #e6392f;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.checkout-btn:hover {
+    background: #ff4a40;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+header {
+    height: 155px;
+}
+
+.sec1 {
+    width: 100%;
+    height: 40vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.img,
+.img1 {
+    width: 60%;
+    height: 40vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 40px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.img {
+    background-image:
+        url("https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=1200&q=80");
+
+    animation: bg 1s ease forwards;
+}
+
+.img1 {
+    display: none;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80");
+
+    animation: bgScale 1s ease forwards;
+}
+
+.imgSpan {
+    padding: 18px 35px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 20px;
+
+    background: rgba(20, 20, 20, 0.55);
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    text-align: center;
+}
+
+.imgSpan h1 {
+    margin: 0 0 8px;
+
+    font-size: 30px;
+}
+
+.imgSpan h2 {
+    margin: 0;
+
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.divButton {
+    position: absolute;
+
+    bottom: -25px;
+
+    display: flex;
+
+    gap: 8px;
+}
+
+.divButton1,
+.divButton2 {
+    width: 20px;
+    height: 10px;
+
+    border: none;
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.divButton1 {
+    width: 40px;
+}
+
+
+/* =====================================
+   PRODUCTS
+===================================== */
+
+.sec2 {
+    width: 100%;
+
+    padding: 100px 5%;
+
+    min-height: 100vh;
+}
+
+.divuun {
+    width: 100%;
+
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.btn12 {
+    padding: 8px 20px;
+
+    border: 1px solid #555;
+
+    border-radius: 15px;
+
+    background: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.btn12:hover {
+    transform: translateY(-2px);
+}
+
+.all {
+    color: white;
+
+    background: #e6392f;
+}
+
+
+/* =====================================
+   PRODUCT GRID
+===================================== */
+
+.bigDiv {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 45px;
+
+    align-items: start;
+}
+
+
+/* =====================================
+   PRODUCT
+===================================== */
+
+.product {
+    width: 100%;
+
+    min-height: 500px;
+
+    position: relative;
+
+    border-radius: 35px;
+
+    overflow: hidden;
+
+    background: #f0eee8;
+}
+
+.sekil {
+    width: 100%;
+    height: 280px;
+}
+
+.sekil img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 30px 30px 0 0;
+}
+
+.divpad {
+    padding: 5px 20px 20px;
+}
+
+.product h1 {
+    margin-top: 20px;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+.product h2 {
+    font-size: 15px;
+
+    opacity: 0.65;
+}
+
+.div {
+    width: 100%;
+
+    margin-top: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.spanVCard {
+    font-size: 23px;
+
+    font-weight: 800;
+}
+
+.ButtonAdd {
+    padding: 8px 17px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    background: black;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.ButtonAdd:hover {
+    background: #e6392f;
+
+    transform: scale(1.08);
+}
+
+
+/* =====================================
+   PRODUCT TAG
+===================================== */
+
+.positoan {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 2;
+}
+
+.classic {
+    padding: 6px 18px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: white;
+
+    color: #e6392f;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =====================================
+   ANIMATION
+===================================== */
+
+@keyframes darkWave {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes bg {
+
+    0% {
+        background-size: 100%;
+    }
+
+    50% {
+        background-size: 110%;
+    }
+
+    100% {
+        background-size: 100%;
+    }
+}
+
+@keyframes bgScale {
+
+    0% {
+        background-size: 100%;
+    }
+
+    50% {
+        background-size: 110%;
+    }
+
+    100% {
+        background-size: 100%;
+    }
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1000px) {
+
+    .burger-nav {
+        width: 90%;
+    }
+
+    .bigDiv {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 650px) {
+
+    .burger-nav {
+        width: calc(100% - 30px);
+
+        top: 15px;
+
+        border-radius: 18px;
+    }
+
+    .burger-nav-inner {
+        height: 75px;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .mobile-nav-btn {
+        display: flex;
+    }
+
+    .burger-title {
+        font-size: 18px;
+    }
+
+    .burger-icon {
+        width: 42px;
+        height: 42px;
+
+        font-size: 19px;
+    }
+
+
+    /* =============================
+       MOBILE BASKET
+    ============================= */
+
+    .basket {
+        width: 100%;
+        max-width: 100%;
+
+        right: 0;
+
+        transform: translateX(100%);
+
+        padding: 22px 18px;
+    }
+
+    .basket.active {
+        transform: translateX(0);
+    }
+
+
+    /* =============================
+       HERO
+    ============================= */
+
+    .sec1 {
+        padding: 0 15px;
+
+        height: 300px;
+    }
+
+    .img,
+    .img1 {
+        width: 100%;
+        height: 280px;
+
+        border-radius: 22px;
+    }
+
+    .imgSpan {
+        display: none;
+    }
+
+
+    /* =============================
+       PRODUCTS
+    ============================= */
+
+    .sec2 {
+        padding: 70px 15px;
+    }
+
+    .divuun {
+        height: auto;
+
+        margin-bottom: 35px;
+
+        flex-wrap: wrap;
+    }
+
+    .btn12 {
+        font-size: 14px;
+    }
+
+    .bigDiv {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .product {
+        min-height: 480px;
+    }
+}
+
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 380px) {
+
+    .burger-title {
+        font-size: 15px;
+    }
+
+    .burger-icon {
+        width: 38px;
+        height: 38px;
+    }
+}
