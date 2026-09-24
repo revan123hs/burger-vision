@@ -1,0 +1,313 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+ 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="app1.js" defer></script>
+        <link rel="stylesheet" href="style1.css">
+        <link rel="stylesheet" href="style.css">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+        
+\        <script src="app.js" defer></script>
+        <title>BURGER</title>
+    </head>
+    <body class="root1">
+        <header>
+
+       <nav class="burger-nav">
+
+    <div class="container">
+
+        <div class="burger-nav-inner">
+
+            <!-- LOGO -->
+            <a class="burger-logo" href="index.html">
+
+                <span class="burger-icon">
+                    <i class="fa-solid fa-burger"></i>
+                </span>
+
+                <span class="burger-title">
+                    BURGER <span>VISION</span>
+                </span>
+
+            </a>
+
+            <!-- DESKTOP MENU -->
+            <div class="burger-menu">
+
+                <a href="index1.html" class="nav-btn create-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Create
+                </a>
+
+                <a href="#" class="nav-btn stores-btn">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Stores
+                </a>
+
+                <button class="basket-btn" type="button">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                    <span>Basket</span>
+
+                    <b class="spzan">0</b>
+
+                </button>
+
+            </div>
+
+            <!-- MOBILE BUTTON -->
+            <button
+                class="mobile-nav-btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#burgerMobileMenu">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div class="collapse mobile-menu" id="burgerMobileMenu">
+
+            <a href="index1.html">
+                <i class="fa-solid fa-plus"></i>
+                Create
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-location-dot"></i>
+                Stores
+            </a>
+
+            <button class="mobile-basket-btn" type="button">
+
+                <i class="fa-solid fa-basket-shopping"></i>
+
+                Basket
+
+                <b class="spzan">0</b>
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- DARK OVERLAY -->
+    <div class="basket-overlay"></div>
+
+    <!-- BASKET -->
+    <div class="basket">
+
+        <div class="basket-top">
+
+            <div class="basket-title">
+
+                <i class="fa-solid fa-basket-shopping"></i>
+
+                <div>
+                    <h3>Your Basket</h3>
+
+                    <small>
+                        <span class="basket-count">0</span> items
+                    </small>
+                </div>
+
+            </div>
+
+            <button class="delet" type="button">
+                &times;
+            </button>
+
+        </div>
+
+        <div class="divsekk">
+
+            <div class="empty-basket">
+
+                <i class="fa-solid fa-burger"></i>
+
+                <h4>Your basket is empty</h4>
+
+                <p>Add some delicious burgers!</p>
+
+            </div>
+
+        </div>
+
+        <div class="basket-bottom">
+
+            <div class="total-row">
+
+                <span>Total</span>
+
+                <strong class="spanBasket">
+                    $0.00
+                </strong>
+
+            </div>
+
+            <button class="checkout-btn">
+                Checkout
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+        </header>
+                <section class="sec4 pt-5">
+
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 menyu">
+                            <h1 class="h10">Konstruktor</h1>
+                                <div class="row">
+                                    <div class="col-sm-12 menyu1">
+                                        <div class="row">
+
+                                            <div class="col-sm-6">
+                                                <h2 class="h2">Mal əti kotleti +$4</h2>
+                                            </div>
+
+
+                                            <div class="col-sm-6 menyu3">
+                                                <button class="btnReduce">-</button>
+                                                <span class="totalSpan"></span>
+                                                <button class="btnIncrease">+</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                    <div class="row">
+                                    <div class="col-sm-12 menyu1">
+                                        <div class="row">
+
+                                            <div class="col-sm-6">
+                                                <h2>Çedder pendiri +$1</h2>
+                                            </div>
+
+
+                                            <div class="col-sm-6 menyu3">
+                                                <button class="btnReduce1">-</button>
+                                                 <span class="totalSpan1"></span>
+                                                <button class="btnIncrease1">+</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                    <div class="row">
+                                    <div class="col-sm-12 menyu1">
+                                        <div class="row">
+
+                                            <div class="col-sm-6">
+                                                <h2>Qızardılmış bekon +$1.5</h2>
+                                            </div>
+
+
+                                            <div class="col-sm-6 menyu3">
+                                                <button class="btnReduce2">-</button>
+                                             <span class="totalSpan2"></span>
+                                                <button class="btnIncrease2">+</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                    <div class="row">
+                                    <div class="col-sm-12 menyu1">
+                                        <div class="row">
+
+                                            <div class="col-sm-6">
+                                                <h2>Aysberq salatı +$0.5</h2>
+                                            </div>
+
+
+                                            <div class="col-sm-6 menyu3">
+                                                <button class="btnReduce3">-</button>
+                                            <span class="totalSpan3"></span>
+                                                <button class="btnIncrease3">+</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                    <div class="row">
+                                    <div class="col-sm-12 menyu1">
+                                        <div class="row">
+
+                                            <div class="col-sm-6">
+                                                <h2>Pomidor +$0.75</h2>
+                                            </div>
+
+
+                                            <div class="col-sm-6 menyu3">
+                                                <button class="btnReduce4">-</button>
+                                                <span class="totalSpan4"></span>
+                                                <button class="btnIncrease4">+</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                         
+
+
+                            </div>
+                            <div class="col-sm-6 pt-5  d-flex">
+                                <div class="card-box pt-5 burger">
+                                    
+                                    <img class="bottom-bread" src="ChatGPT Image 16 May 2026 16_57_06.png" alt="">
+                                    
+                                    <img class="top-bread" src="ChatGPT Image 16 May 2026 16_51_37.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+        
+                
+                
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    </body>
+    </html>
+    
